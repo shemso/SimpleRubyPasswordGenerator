@@ -3,9 +3,6 @@ require 'securerandom'
 class PasswordGenerator
 
 	def generate(size=12,type='base64')
-		# {:size => '12',:type => 'base64'}.merge!(options)
-		# options.merge({:size => '12',:type => 'base64'})
-		# size = options[:size].to_i
 		size = size.to_i
 		if self.allowed_types.include?(type)
     	SecureRandom.method(type).call(size)[0,size]

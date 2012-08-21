@@ -17,6 +17,13 @@ OptionParser.new do |opts|
     	exit
     end
   end
+  opts.on("-h", "--[no-]help", "Provides help (this)") do |s|
+    puts "Usage"
+    puts "./pwdgen.rb -s SIZE -t [hex|base64|random_bytes] "
+    puts "./pwdgen.rb --size SIZE --type [hex|base64|random_bytes] "
+    puts "./pwdgen.rb --help"
+    exit
+  end
 end.parse!
 
 Pwd.echo_password(options[:size],options[:type])
